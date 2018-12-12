@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	"gopkg.in/yaml.v2"
+	yaml "gopkg.in/yaml.v2"
 )
 
 // Parse parses the configuration from io.Reader r.
@@ -62,6 +62,8 @@ func parseRaw(r *RawResource) (Resource, error) {
 	switch r.Kind {
 	case "cron":
 		obj = new(Cron)
+	case "predicate":
+		obj = new(Predicate)
 	case "secret":
 		obj = new(Secret)
 	case "signature":

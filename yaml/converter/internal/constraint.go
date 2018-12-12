@@ -3,13 +3,14 @@ package yaml
 type (
 	// Constraints defines a set of runtime constraints.
 	Constraints struct {
-		Ref         Constraint
-		Repo        Constraint
-		Instance    Constraint
-		Environment Constraint
-		Event       Constraint
-		Branch      Constraint
-		Status      Constraint
+		Ref            Constraint
+		Repo           Constraint
+		Instance       Constraint
+		Environment    Constraint
+		Event          Constraint
+		Branch         Constraint
+		Status         Constraint
+		UsingCondition string
 	}
 
 	// Constraint defines a runtime constraint.

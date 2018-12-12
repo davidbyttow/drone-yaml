@@ -7,7 +7,7 @@ import (
 	droneyaml "github.com/drone/drone-yaml/yaml"
 	"github.com/drone/drone-yaml/yaml/pretty"
 
-	"gopkg.in/yaml.v2"
+	yaml "gopkg.in/yaml.v2"
 )
 
 // Config provides the high-level configuration.
@@ -141,6 +141,7 @@ func toConditions(from Constraints) droneyaml.Conditions {
 			Include: from.Status.Include,
 			Exclude: from.Status.Exclude,
 		},
+		UsingCondition: from.UsingCondition,
 	}
 }
 

@@ -9,6 +9,7 @@ import (
 const (
 	KindCron      = "cron"
 	KindPipeline  = "pipeline"
+	KindPredicate = "predicate"
 	KindRegistry  = "registry"
 	KindSecret    = "secret"
 	KindSignature = "signature"
@@ -62,6 +63,8 @@ func (m *Manifest) UnmarshalJSON(b []byte) error {
 		switch res.Kind {
 		case "cron":
 			obj = new(Cron)
+		case "predicate":
+			obj = new(Predicate)
 		case "secret":
 			obj = new(Secret)
 		case "signature":
